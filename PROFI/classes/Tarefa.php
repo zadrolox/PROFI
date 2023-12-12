@@ -34,4 +34,11 @@ class Tarefa {
         return $stmt;
     }
 
+    public function delete($id) {
+        $query = "DELETE FROM tbtarefa WHERE id = ?"; 
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$id]);
+        return $stmt;
+    }
+
 }

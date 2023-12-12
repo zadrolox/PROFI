@@ -36,13 +36,18 @@ $data = $tarefa->read();
 
             <?php
             $count = 0;
-            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {  ?>
+            while ($row = $data->fetch(PDO::FETCH_ASSOC)) { ?>
 
-            <tr>
-                <th><?php echo $row['id']; ?></th>
-                <th><?php echo $row['tarefa']; ?></th>
-                <th> <a href="update-inserir.php?id=<?php echo $row['id']; ?>">Edit</a> / E</th>
-            </tr>
+                <tr>
+                    <th>
+                        <?php echo $row['id']; ?>
+                    </th>
+                    <th>
+                        <?php echo $row['tarefa']; ?>
+                    </th>
+                    <th> <a href="update-inserir.php?id=<?php echo $row['id']; ?>">A</a> / <a
+                            href="delete-tarefa.php?id=<?php echo $row['id']; ?>">E</a></th>
+                </tr>
 
             <?php } ?>
         </tbody>
@@ -50,7 +55,9 @@ $data = $tarefa->read();
 </body>
 
 <style>
-    .tabela, th, td {
+    .tabela,
+    th,
+    td {
         border: 1px solid black;
     }
 </style>
