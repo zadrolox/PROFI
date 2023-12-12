@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     $user->register($username, $password, $confirm_password, $sexo);
-    header("refresh:1;url=index.php");
+    header("refresh:1;url=dashboard-adm.php");
 }
 ?>
 

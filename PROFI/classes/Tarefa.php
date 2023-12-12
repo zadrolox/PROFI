@@ -25,6 +25,15 @@ class Tarefa {
         return $stmt;
     }
 
+    public function readEd($id)
+    {
+        $query = "SELECT * FROM tbtarefa WHERE fk_idusu = :fk_idusu";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":fk_idusu", $id);
+        $stmt->execute();
+        return $stmt;
+    }
+
     public function update($id, $tarefa, $data )
     {
         $query = "UPDATE tbtarefa SET tarefa = ?, data = ? WHERE id = ?";
@@ -38,6 +47,14 @@ class Tarefa {
         $query = "DELETE FROM tbtarefa WHERE id = ?"; 
         $stmt = $this->conn->prepare($query);
         $stmt->execute([$id]);
+        return $stmt;
+    }
+
+    public function create($tarefa, $data, $fk_idusu)
+    {
+        $query = "INSERT INTO  tbtarefa (tarefa,  data , fk_idusu) VALUES (?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$tarefa, $data, $fk_idusu]);
         return $stmt;
     }
 

@@ -71,11 +71,27 @@ class User {
         }
     }
 
-    public function update($id, $username, $sexo, $password )
-    {
-        $query = "UPDATE tbuser SET username = ?, sexo = ?, password= ? WHERE id = ?";
+    public function delete($id) {
+        $query = "DELETE FROM tbuser WHERE id = ?"; 
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$username, $sexo, $password, $id]);
+        $stmt->execute([$id]);
+        return $stmt;
+    }
+
+    public function update($id, $username, $sexo )
+    {
+        $query = "UPDATE tbuser SET username = ?, sexo = ? WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$username, $sexo, $id]);
+        return $stmt;
+    }
+
+    public function read()
+    {
+        $query = "SELECT * FROM  tbuser";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        
         return $stmt;
     }
 }
