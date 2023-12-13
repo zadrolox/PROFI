@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $tarefa = new Tarefa($conn);
+    $tarefa = new User($conn);
     $data = $tarefa->readEdits($id);
 
     $row = $data->fetch(PDO::FETCH_ASSOC);

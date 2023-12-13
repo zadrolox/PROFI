@@ -94,5 +94,14 @@ class User {
         
         return $stmt;
     }
+
+    public function readEdits($id)
+    {
+        $query = "SELECT id FROM tbuser WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt;
+    }
 }
 ?>
