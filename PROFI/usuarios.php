@@ -6,7 +6,6 @@ include './classes/Tarefa.php';
 
 $user = new User($conn);
 $data = $user->read();
-
 ?>
 
 
