@@ -5,7 +5,7 @@ include './classes/user.php';
 include './classes/Tarefa.php';
 
 $tarefa = new Tarefa($conn);
-$data = $tarefa->readEd($_SESSION['id']);
+$data = $tarefa->readEdes($_SESSION['id']);
 
 
 $cid = 'BRXX3553'; // CID da sua cidade, encontre a sua em http://hgbrasil.com/weather

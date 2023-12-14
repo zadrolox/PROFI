@@ -12,10 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = $_POST['data'];
     $fk_idusu = $_SESSION['id'];
 
+    if (empty($tarefe) or !strstr($tarefe, '')) {
+        echo "Favor digitar uma tarefa";
+        header("refresh:2;");
+        exit();
+    }
+
 
     $tarefa->create($tarefe, $data, $fk_idusu);
-    if ($_SESSION['adm'] == 1){
-    header("refresh:0.1;url=dashboard-adm.php");
+    if ($_SESSION['adm'] == 1) {
+        header("refresh:0.1;url=dashboard-adm.php");
     } else {
         header("refresh:0.1;url=dashboard-usu.php");
     }

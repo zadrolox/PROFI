@@ -25,7 +25,15 @@ class Tarefa {
         return $stmt;
     }
 
-    public function readEd($id)
+    public function readEd()
+    {
+        $query = "SELECT * FROM tbuser INNER JOIN tbtarefa ON tbtarefa.fk_idusu = tbuser.id;";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function readEdes($id)
     {
         $query = "SELECT * FROM tbtarefa WHERE fk_idusu = :fk_idusu";
         $stmt = $this->conn->prepare($query);

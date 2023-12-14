@@ -5,7 +5,7 @@ include './classes/user.php';
 include './classes/Tarefa.php';
 
 $tarefa = new Tarefa($conn);
-$data = $tarefa->read();
+$data = $tarefa->readEd();
 
 
 $cid = 'BRXX3553'; // CID da sua cidade, encontre a sua em http://hgbrasil.com/weather
@@ -34,6 +34,7 @@ $dados = json_decode(file_get_contents('http://api.hgbrasil.com/weather/?cid='
         <thead>
             <tr>
                 <th> ID</th>
+                <th> Nome do encarregado</th>
                 <th> Tarefa</th>
                 <th> Ação</th>
             </tr>
@@ -42,11 +43,14 @@ $dados = json_decode(file_get_contents('http://api.hgbrasil.com/weather/?cid='
 
             <?php
             $count = 0;
-            while ($row = $data->fetch(PDO::FETCH_ASSOC)) { ?>
+            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {  ?>
 
                 <tr>
                     <th>
                         <?php echo $row['id']; ?>
+                    </th>
+                    <th>
+                        <?php echo $row['username']; ?>
                     </th>
                     <th>
                         <?php echo $row['tarefa']; ?>

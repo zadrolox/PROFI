@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     $user->register($username, $password, $confirm_password, $sexo);
-    header("refresh:1;url=dashboard-adm.php");
+    header("refresh:1;url=index.php");
 }
 ?>
 
@@ -45,11 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
             <div class="containerBotoes">
-                <a href="../realindex.php" type="submit"><button class="btn" value="Registrar">Registrar</button></a>
-                <a href="./login.php" type="submit" class="voltar">
-                    <img src="../img/Login/back.png" alt="">
-                    <h1 class="textVoltar">Voltar</h1>
-                </a>
+                <a  type="submit"><button class="btn" value="Registrar">Registrar</button></a>
             </div>
         </div>
         </form>

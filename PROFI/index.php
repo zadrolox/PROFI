@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <div class="containerBotoes">
-            <a href="../realindex.php" type="submit"><button class="btn">Logue-se Aqui</button></a>
+            <a type="submit"><button class="btn">Logue-se Aqui</button></a>
             <a href="register.php" class="esqueciSenha">Não tem cadastro, Clique aqui!!</a>
         </div>
     </section>
