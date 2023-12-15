@@ -3,7 +3,6 @@ class User
 {
     private $conn;
 
-
     function __construct($conn)
     {
         $this->conn = $conn;
@@ -61,16 +60,6 @@ class User
         }
     }
 
-    public function logout()
-    {
-        try {
-            session_start();
-            session_destroy();
-        } catch (PDOException $e) {
-            echo "Erro no logout: " . $e->getMessage();
-        }
-    }
-
     public function delete($id)
     {
         $query = "DELETE FROM tbuser WHERE id = ?";
@@ -104,15 +93,5 @@ class User
         $stmt->execute();
         return $stmt;
     }
-
-    public function readEd($id)
-    {
-        $query = "SELECT * FROM tbuser WHERE id = :id";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":id", $id);
-        $stmt->execute();
-        return $stmt;
-    }
-
 }
 ?>

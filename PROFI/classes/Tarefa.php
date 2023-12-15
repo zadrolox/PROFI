@@ -2,18 +2,8 @@
 class Tarefa {
     private $conn;
 
-
     function __construct($conn) {
         $this->conn = $conn;
-    }
-
-    public function read()
-    {
-        $query = "SELECT * FROM  tbtarefa";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        
-        return $stmt;
     }
 
     public function readEdits($id)
