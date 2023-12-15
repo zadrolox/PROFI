@@ -35,6 +35,33 @@ class User
         }
     }
 
+    public function registerAdm($username, $password, $confirm_password, $sexo, $adm)
+    {
+        // Verifique se as senhas coincidem
+        if ($password !== $confirm_password) {
+            echo "As senhas não coincidem. Tente novamente.";
+            return;
+        }
+        try {
+            // Hash da senha (substitua esta linha pela sua lógica de hash)
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+
+            // Insira no banco de dados
+            $stmt = $this->conn->prepare("INSERT INTO tbuser (username, password, sexo, adm) VALUES (:username, :password, :sexo, :adm)");
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':password', $hashed_password);
+            $stmt->bindParam(':sexo', $sexo);
+            $stmt->bindParam(':adm', $adm);
+            $stmt->execute();
+
+
+            echo "Registro bem-sucedido!";
+        } catch (PDOException $e) {
+            echo "Erro no registro: " . $e->getMessage();
+        }
+    }
+
     public function login($username, $password)
     {
         try {

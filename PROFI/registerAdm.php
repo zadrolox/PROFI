@@ -1,6 +1,7 @@
 <?php
 include './config/config.php';
 include './classes/user.php';
+session_start();
 
 $user = new User($conn);
 
@@ -9,12 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
     $sexo = $_POST['sexo'];
+    $adm = $_POST['admin'];
 
-    $user->register($username, $password, $confirm_password, $sexo);
-    header("refresh:1;url=index.php");
+    $user->registerAdm($username, $password, $confirm_password, $sexo, $adm);
+    header("refresh:0.1;url=dashboard-adm.php");
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" name="password" placeholder="Senha" class="input" required><br>
         <input type="password" name="confirm_password" placeholder="Confirme senha" class="input" required><br>
         <input type="sexo" name="sexo" placeholder="Sexo" class="input" required><br>
+        <input type="checkbox" name="admin" value="1">
         <input type="submit" value="Registrar">
     </form>
 </body>

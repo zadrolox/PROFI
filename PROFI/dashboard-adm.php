@@ -22,7 +22,7 @@ $dados = json_decode(file_get_contents('http://api.hgbrasil.com/weather/?cid='
 
 <body>
     <a href="./form-inserir.php" type="submit"><button class="btn">inserir tarefa</button></a>
-    <a href="./register.php" type="submit"><button class="btn">inserir usuario</button></a>
+    <a href="./registerAdm.php" type="submit"><button class="btn">inserir usuario</button></a>
     <a href="./usuarios.php" type="submit"><button class="btn">usuarios</button></a>
     <a href="./logout.php" type="submit"><button class="btn">logout</button></a>
 
