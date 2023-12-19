@@ -7,7 +7,7 @@ Foi criado com 2 tabelas para o Banco de Dados sendo de Usuário e Tarefas, com 
 
 Como foi a base do site em Mockup.
 
-<img src="/PROFI/img/mockup/Login-1.jpg" widht=20px/>
+<img src="/PROFI/img/mockup/Login-1.jpg" style="widht: 20px"/>
 <img src="/PROFI/img/mockup/Login-2.jpg" widht="20px"/>
 <img src="/PROFI/img/mockup/Login-3.jpg"; widht=20px/>
 <img src="/PROFI/img/mockup/Login-4.jpg"/>
