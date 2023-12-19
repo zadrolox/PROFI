@@ -9,7 +9,7 @@ Como foi a base do site em Mockup.
 
 <img src="/PROFI/img/mockup/Login-1.jpg" style=" widht: 20px, height: 20px"/>
 <img src="/PROFI/img/mockup/Login-2.jpg" widht="20px"/>
-<img src="/PROFI/img/mockup/Login-3.jpg"; widht=20px/>
+<img src="/PROFI/img/mockup/Login-3.jpg" widht="20px" />
 <img src="/PROFI/img/mockup/Login-4.jpg"/>
 <img src="/PROFI/img/mockup/Login-5.jpg"/>
 <img src="/PROFI/img/mockup/Login-6.jpg"/>
