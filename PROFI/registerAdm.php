@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" name="password" placeholder="Senha" class="input" required><br>
         <input type="password" name="confirm_password" placeholder="Confirme senha" class="input" required><br>
         <input type="sexo" name="sexo" placeholder="Sexo" class="input" required><br>
-        <input type="checkbox" name="admin" value="1">
+        Adm <input type="checkbox" name="admin" value="1">
         <input type="submit" value="Registrar">
     </form>
 </body>
