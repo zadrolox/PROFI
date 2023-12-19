@@ -27,4 +27,4 @@ Ja tera um usuario adm no banco, a senha padrao é "666".
 - **CSS**
 - **PHP**
 - **HTML**
-- **SQL**
+- **MYSQL**
