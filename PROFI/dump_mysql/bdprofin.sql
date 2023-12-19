@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/12/2023 às 02:19
+-- Tempo de geração: 19/12/2023 às 01:18
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bdprofin`
 --
+CREATE DATABASE IF NOT EXISTS `bdprofin` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bdprofin`;
 
 -- --------------------------------------------------------
 
@@ -27,11 +29,13 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `tbtarefa`
 --
 
-CREATE TABLE `tbtarefa` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbtarefa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tarefa` varchar(255) NOT NULL,
   `data` date NOT NULL,
-  `fk_idusu` int(11) NOT NULL
+  `fk_idusu` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_idusu` (`fk_idusu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -40,12 +44,13 @@ CREATE TABLE `tbtarefa` (
 -- Estrutura para tabela `tbuser`
 --
 
-CREATE TABLE `tbuser` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbuser` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `sexo` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `adm` tinyint(1) DEFAULT NULL
+  `adm` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -53,40 +58,7 @@ CREATE TABLE `tbuser` (
 --
 
 INSERT INTO `tbuser` (`id`, `username`, `sexo`, `password`, `adm`) VALUES
-(2, 'Adm', 'Adm', '$2y$10$JOx2KVGFd7/OqxJ.N6.0OuGSJsJxDt79xys7EYvjDT4KEabf9h0Za', 1);
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `tbtarefa`
---
-ALTER TABLE `tbtarefa`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_idusu` (`fk_idusu`);
-
---
--- Índices de tabela `tbuser`
---
-ALTER TABLE `tbuser`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `tbtarefa`
---
-ALTER TABLE `tbtarefa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de tabela `tbuser`
---
-ALTER TABLE `tbuser`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+(1, 'Adm', 'Adm', '$2y$10$JOx2KVGFd7/OqxJ.N6.0OuGSJsJxDt79xys7EYvjDT4KEabf9h0Za', 1);
 
 --
 -- Restrições para tabelas despejadas
