@@ -43,5 +43,6 @@ $data = $user->read();
             <?php } ?>
         </tbody>
     </table>
+    <a href="dashboard-adm.php"><button>Voltar</button></a>
 </body>
 </html>

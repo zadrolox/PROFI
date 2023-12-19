@@ -37,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         Adm <input type="checkbox" name="admin" value="1">
         <input type="submit" value="Registrar">
     </form>
+
+    <a href="dashboard-adm.php"><button>Voltar</button></a>
 </body>
 
 </html>

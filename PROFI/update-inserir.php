@@ -49,6 +49,7 @@ if (isset($_GET['id'])) {
 
         <input type="submit" value="Alterar">
     </form>
+    <a href="dashboard-adm.php"><button>Voltar</button></a>
 </body>
 
 </html>

@@ -56,6 +56,8 @@ $dados = json_decode(file_get_contents('http://api.hgbrasil.com/weather/?cid='
         </tbody>
     </table>
 
+    
+
     <h2>Clima de Sapucaia do sul</h2>
     <?php echo $dados['results']['city']; ?>
     <?php echo $dados['results']['temp']; ?> ºC<br>

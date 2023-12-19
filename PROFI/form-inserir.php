@@ -44,6 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="date" name="data" placeholder="data" class="input" required><br>
             <input type="submit" value="Inserir">
         </form>
+
+        <?php if ($_SESSION['adm'] == 1) { ?>
+            <a href="dashboard-adm.php"><button>Voltar</button></a>
+        <?php } else { ?>
+            <a href="dashboard-usu.php"><button>Voltar</button></a>
+        <?php } ?>
     </div>
 </body>
 
