@@ -1,4 +1,4 @@
-# [Desenvolvendo] - PRUFI
+# [Desenvolvendo] - PROFI
 ## 📘 Sobre
 O site foi desenvolvido para criar uma conexão API.
 
